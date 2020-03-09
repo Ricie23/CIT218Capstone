@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "NewGameForm";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/newgameview.css" />
+</head>
+<body>
+
+    <h2>New Game Form</h2>
+    <form name="newGame" method="post">
+        <p>Game: <input type="text" name="gameName" id="gameName" /></p>
+        <p>Genre: <input type="text" name="gameGenre" id="gameGenre" /></p>
+        <p>Hours Played: <input type="number" min="0" name="gameHours" id="gameHours" /></p>
+        <p>
+            has this game been beaten?(choose an option) <select name="gameIsBeaten" id="gameIsBeaten">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </p>
+        <input type="submit" value="Submit Game" />
+    </form>
+</body>
+</html>

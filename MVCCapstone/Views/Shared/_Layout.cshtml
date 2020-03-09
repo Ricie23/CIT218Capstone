@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#"><i class="fas fa-gamepad"></i> Game Tracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("About", "About", "Home")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Contact", "Contact", "Home")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Wishlist", "ShowAllGames", "Games")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Add To Wishlist", "AddNewGame", "Games")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Trade In Calculator", "TradeInPriceCalc", "Games")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Games", "Index", "MyGames")
+                    </li>
+                    <li class="nav nav-item nav-link">
+                        @Html.ActionLink("Games Display", "Display", "MyGames")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Game Stats", "Index", "Stats")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Trophies", "Index", "Trophies")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Artwork", "Index", "CoverArts")
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="text-info">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

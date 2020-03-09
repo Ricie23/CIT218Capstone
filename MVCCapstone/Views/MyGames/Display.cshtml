@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Display";
+}
+@model IEnumerable<MVCCapstone.Models.MyGames>
+<h2>My Games List</h2>
+<table class="table table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.Genre)</th>
+        <th>@Html.DisplayNameFor(model => model.Price)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            <td>
+                @Html.ActionLink("Edit", "EditDisplay", new { id = item.ID })
+            </td>
+        </tr>
+
+    }
+</table>
+
+

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+    switch (Model.IsBeaten)
+    {
+        case true:
+            ViewBag.Message = " Yes";
+            break;
+
+        case false:
+            ViewBag.Message = " Not Yet";
+            break;
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/newgameview.css" />
+    <style>
+
+        p {
+            color: aqua;
+            margin-left: 28%;
+        }
+    </style>
+</head>
+<body>
+    <h2>New Game Confirmed</h2>
+    <p> you have succesfully added @Model.Name to your game tracker!</p>
+    <p>Genre: @Model.Genre</p>
+    <p>Hours Played: @Model.Hours</p>
+    <p>Have You Beaten This Game? @ViewBag.Message </p>
+</body>
+</html>
+
+
+

@@ -1,0 +1,25 @@
+﻿body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2 {
+    margin-top: 3%;
+    margin-left: 30%;
+    color: chartreuse;
+}
+
+form {
+    margin-left: 30%;
+    color: aqua;
+}
+
+    form input {
+        background-color: transparent;
+        color: crimson;
+    }
+
+    form option, select {
+        background-color: chartreuse;
+    }

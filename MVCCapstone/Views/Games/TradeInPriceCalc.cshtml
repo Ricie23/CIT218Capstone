@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "TradeInPriceCalc";
+
+    var tradePrice = "";
+    if (IsPost)
+    {
+        var num1 = Request["priceNew"];
+        var newPrice = num1.AsInt();
+        var sellType = Request["sellType"];
+        var sell = 1.0;
+        var tradeIn = 0.00;
+        switch (sellType)
+        {
+            case "cash":
+                sell = 0.4;
+                break;
+            case "storeCredit":
+                sell = 0.5;
+                break;
+
+        }
+        tradeIn = newPrice * sell;
+        tradePrice = "Used Price = $" + tradeIn;
+    }
+}
+
+<html>
+<body style="background-color:lightslategrey; color:darkkhaki">
+    <img src="~/Content/gamecontrollers.jpg" width="50%" style="display:flex; float:right" />
+
+    <form action="" method="post">
+        <p>
+            <label for="priceNew">Game Price New:</label><br />
+            <input type="text" name="priceNew" />
+        </p>
+        <p>
+            trade for cash or store credit? <select name="sellType" id="sellType">
+                <option value="cash">Cash</option>
+                <option value="storeCredit">Store Credit</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Calculate Trade-In Price" />
+        </p>
+    </form>
+    <p>@tradePrice</p>
+    <br />
+    <p style="font-size:smaller;">This is a generic price calculator trade in prices may vary at different stores.</p>
+</body>
+</html>
+
+
+
