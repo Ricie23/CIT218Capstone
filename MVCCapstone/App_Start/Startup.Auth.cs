@@ -53,7 +53,7 @@ namespace MVCCapstone
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
+             
             app.UseFacebookAuthentication(
                appId: "202680700831608",
                appSecret: "316be7d91e7b8506ce940d2e283a90b3");
