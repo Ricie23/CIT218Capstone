@@ -9,10 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped">
+<table class="table table-striped text-light">
     <tr>
+        <th>@Html.DisplayNameFor(model=>model.MyGamesID)</th>
         <th>
-            @Html.DisplayNameFor(model => model.Games.ID)
+            @Html.DisplayNameFor(model => model.Games.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -30,8 +31,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Games.ID)
+                @Html.DisplayFor(modelItem=>item.MyGamesID)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Games.Name)
+            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

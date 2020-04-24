@@ -10,9 +10,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Content/newgameview.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"><i class="fas fa-gamepad"></i> Game Tracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav" style="text-decoration:none;">
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Contact", "Contact", "Home")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Wishlist", "ShowAllGames", "Games")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Add To Wishlist", "AddNewGame", "Games")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Trade In Calculator", "TradeInPriceCalc", "Games")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Games", "Index", "MyGames")
+                </li>
+                <li class="nav nav-item nav-link">
+                    @Html.ActionLink("Games Display", "Display", "MyGames")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Game Stats", "Index", "Stats")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Trophies", "Index", "Trophies")
+                </li>
+                <li class="nav-item nav-link">
+                    @Html.ActionLink("Artwork", "Index", "CoverArts")
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
+<body>
+   
     <h2>New Game Form</h2>
     <form name="newGame" method="post">
         <p>Game: <input type="text" name="gameName" id="gameName" /></p>
@@ -26,5 +71,9 @@
         </p>
         <input type="submit" value="Submit Game" />
     </form>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
 </body>
 </html>

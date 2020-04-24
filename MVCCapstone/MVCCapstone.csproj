@@ -174,6 +174,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationContextMigrations\202003091703129_InitialCreate.cs" />
+    <Compile Include="ApplicationContextMigrations\202003091703129_InitialCreate.designer.cs">
+      <DependentUpon>202003091703129_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContextMigrations\202004141534330_Initial.cs" />
+    <Compile Include="ApplicationContextMigrations\202004141534330_Initial.designer.cs">
+      <DependentUpon>202004141534330_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContextMigrations\Configuration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -189,6 +198,15 @@
     <Compile Include="Controllers\TrophiesController.cs" />
     <Compile Include="DAL\GameContext.cs" />
     <Compile Include="DAL\GameInitializer.cs" />
+    <Compile Include="DataContextMigrations\202003091727564_InitialCreate.cs" />
+    <Compile Include="DataContextMigrations\202003091727564_InitialCreate.designer.cs">
+      <DependentUpon>202003091727564_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContextMigrations\202004141532586_Intial.cs" />
+    <Compile Include="DataContextMigrations\202004141532586_Intial.designer.cs">
+      <DependentUpon>202004141532586_Intial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContextMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +258,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -406,6 +425,20 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ApplicationContextMigrations\202003091703129_InitialCreate.resx">
+      <DependentUpon>202003091703129_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationContextMigrations\202004141534330_Initial.resx">
+      <DependentUpon>202004141534330_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContextMigrations\202003091727564_InitialCreate.resx">
+      <DependentUpon>202003091727564_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContextMigrations\202004141532586_Intial.resx">
+      <DependentUpon>202004141532586_Intial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

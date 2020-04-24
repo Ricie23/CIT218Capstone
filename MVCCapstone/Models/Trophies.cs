@@ -10,18 +10,17 @@ namespace MVCCapstone.Models
 {
     public class Trophies
     {
-
-
         public int ID { get; set; }
 
         [Index]
         [Display(Name = "Game ID")]
-
         public int MyGamesID { get; set; }
+
         [MinLength(3, ErrorMessage = "Please enter more than 3 characters")]
         [MaxLength(30, ErrorMessage = "Please enter less than 30 characters")]
         [Required]
         public string Name { get; set; }
+
         [MinLength(3, ErrorMessage = "Please enter more than 3 characters")]
         [MaxLength(100, ErrorMessage = "Please enter less than 100 characters")]
         public string Description { get; set; }

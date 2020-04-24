@@ -21,7 +21,7 @@ namespace MVCCapstone.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("GameContext", throwIfV1Schema: false)
         {
         }
 
