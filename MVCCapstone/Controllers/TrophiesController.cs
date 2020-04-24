@@ -42,7 +42,7 @@ namespace MVCCapstone.Controllers
         // GET: Trophies/Create
         public ActionResult Create()
         {
-            ViewBag.StatsID = new SelectList(db.Stats, "ID", "ID");
+            ViewBag.MyGamesID = new SelectList(db.Games, "ID", "ID");
             return View();
         }
 
@@ -51,7 +51,7 @@ namespace MVCCapstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,StatsID,Name,Description,Type")] Trophies trophies)
+        public ActionResult Create([Bind(Include = "ID,MyGamesID,Name,Description,Type")] Trophies trophies)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace MVCCapstone.Controllers
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again. If problem persits contact the system administrator");
             }
-            ViewBag.StatsID = new SelectList(db.Stats, "ID", "ID", trophies.MyGamesID);
+            ViewBag.MyGamesID = new SelectList(db.Games, "ID", "ID", trophies.MyGamesID);
             return View(trophies);
         }
 
@@ -82,7 +82,7 @@ namespace MVCCapstone.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.StatsID = new SelectList(db.Stats, "ID", "ID", trophies.MyGamesID);
+            ViewBag.MyGamesID = new SelectList(db.Games, "ID", "ID", trophies.MyGamesID);
             return View(trophies);
         }
 
@@ -91,7 +91,7 @@ namespace MVCCapstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,StatsID,Name,Description,Type")] Trophies trophies)
+        public ActionResult Edit([Bind(Include = "ID,MyGamesID,Name,Description,Type")] Trophies trophies)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace MVCCapstone.Controllers
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again. If problem persits contact the system administrator");
             }
-            ViewBag.StatsID = new SelectList(db.Stats, "ID", "ID", trophies.MyGamesID);
+            ViewBag.MyGamesID = new SelectList(db.Games, "ID", "ID", trophies.MyGamesID);
             return View(trophies);
         }
 
